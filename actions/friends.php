@@ -1,3 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="../public/css/lightbox.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/myPhoto.css" />
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.js"></script>
+    <script src="../public/js/jquery.lightbox.js"></script>
+    <script src="../public/js/myPhoto.js"></script>
+    <script type="text/javascript" src="../public/js/move-top.js"></script>
+    <script type="text/javascript" src="../public/js/easing.js"></script>
+</head>
+<body>
+    <div class="myPhoto">
+    	<div class="myPhotos">
 <?php
 
 require_once ("../publicClasses/Friends.php");
@@ -16,9 +32,28 @@ $config = array(
 
 $friends_pic = $friends->get_friends_pic();
 
-foreach ($friends_pic as $key => $value) {
-	echo "<div style='float:left;margin-left:50px'>";
-	echo "<img src= ".$value['pic_url']." style=width:200px;height:200px/><br>";
-	echo $value['board_name'].'---'.$value['post_time'];
-	echo "</div>";
+
+$variable = $friends_pic;
+$_html='';
+foreach ($variable as $key => $value) {
+
+    $_html .= '<div class="photoOuterMostDiv" style="background-image:url('.$value['pic_url'].'");>';
+    $_html .= "<div class='overlay'>";
+    $_html .= '<a href='.$value['pic_url'].' data-rel="lightbox" class="fa fa-expand" descript="类别:'.$value['board_name'].'创建时间:'.$value['post_time'].'"></a>';
+    $_html .= "</div>";
+    $_html .= "</div>";
+
 }
+echo $_html;
+// foreach ($friends_pic as $key => $value) {
+// 	echo "<div style='float:left;margin-left:50px'>";
+// 	echo "<img src= ".$value['pic_url']." style=width:200px;height:200px/><br>";
+// 	echo $value['board_name'].'---'.$value['post_time'];
+// 	echo "</div>";
+// }
+
+?>
+	</div>
+	    </div>
+</body>
+</html>
