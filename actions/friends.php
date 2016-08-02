@@ -23,7 +23,7 @@ $config = array(
 	'mode' => 2,
 	'count' => 50,
 	'start_page' => '1',
-	'end_page' => '2',
+	'end_page' => '5',
 	'board_name' => $board_name,
 	'has_attachment' => 'yes'
 );
@@ -34,10 +34,11 @@ $friends_pic = $friends->get_friends_pic();
 
 
 $variable = $friends_pic;
+echo "<strong>共".count($variable)."张图片</strong><br><br>";
 $_html='';
 foreach ($variable as $key => $value) {
 
-    $_html .= '<div class="photoOuterMostDiv" style="background-image:url('.$value['pic_url'].'");>';
+    $_html .= '<div class="photoOuterMostDiv" style="background-image:url('.$value['pic_url'].');">';
     $_html .= "<div class='overlay'>";
     $_html .= '<a href='.$value['pic_url'].' data-rel="lightbox" class="fa fa-expand" descript="类别:'.$value['board_name'].'创建时间:'.$value['post_time'].'"></a>';
     $_html .= "</div>";

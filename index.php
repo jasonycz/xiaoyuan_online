@@ -53,11 +53,11 @@ $(function(){
 	<div class="container">
 		<div class="row col-md-8" style="border:3px solid red">
 			<ul>
+				<li><a href="./actions/picture.php">获取贴图秀(H5轮播图)</a></li>
 				<li><a href="./actions/friends.php">获取情感天空</a></li>
 				<li><a href="./actions/travel.php">获取旅游</a></li>
 				<!-- <li><a href="./actions/sections.php">分区信息</a></li>
-				<li><a href="./actions/user.php">获取用户信息</a></li>
-				<li><a href="./actions/picture.php">获取贴图秀</a></li> -->
+				<li><a href="./actions/user.php">获取用户信息</a></li> -->
 			</ul>
 			
 		</div>
