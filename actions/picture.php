@@ -128,8 +128,8 @@ $(function(){
   var mySwiper = $('.swiper-container').swiper({
     loop: true,
     //其他设置
-    pagination: '.pagination',
-    paginationClickable: true,
+    // pagination: '.pagination',
+    // paginationClickable: true,
   });
 })
 </script>

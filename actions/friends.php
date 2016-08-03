@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+    <meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="../public/css/lightbox.css" />
     <link rel="stylesheet" type="text/css" href="../public/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="../public/css/myPhoto.css" />
@@ -15,7 +16,7 @@
     <div class="myPhoto">
     	<div class="myPhotos">
 <?php
-
+require_once ("header.php");
 require_once ("../publicClasses/Friends.php");
 $friends = new Friends();
 $board_name = "Friends";
@@ -43,6 +44,8 @@ foreach ($variable as $key => $value) {
     $_html .= '<a href='.$value['pic_url'].' data-rel="lightbox" class="fa fa-expand" descript="类别:'.$value['board_name'].'创建时间:'.$value['post_time'].'"></a>';
     $_html .= "</div>";
     $_html .= "</div>";
+    // $_html .= "<div style=float:left;>".$value['post_time']."</div>";
+
 
 }
 echo $_html;

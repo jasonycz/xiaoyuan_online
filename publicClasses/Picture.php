@@ -34,7 +34,7 @@ class Picture{
 	 * @return 从数据库中获取旅游图片信息
 	 */
 	public function get_picture_pic(){
-		$sql = 'select * from pic where board_name = "'.$this->board_name.'" group by pic_url';
+		$sql = 'select * from pic where board_name = "'.$this->board_name.'" group by pic_url order by post_time desc';
 		$res = $this->model_pic->get($sql);
 		return $res;
 	}

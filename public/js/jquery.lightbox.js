@@ -66,8 +66,12 @@
                 //加载lightbox并且加载loadint图标
                 plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
 
-                var img = $('<img src="' + $(plugin.current).attr('href') + '" draggable="false">');
-                //alert($(plugin.current).attr('href'));
+                var img = $('<img src="' + $(plugin.current).attr('href') + '" draggable="false" >');
+                
+                $(img).error(function(){
+                    // console.log(this);
+                    $(this).attr('src',"../public/images/loadFail.png");
+                })
                 $(img).load(function () {
                     $('.lightbox-loading').remove();
                     plugin.lightbox.append(img);
@@ -216,11 +220,19 @@
                         }
                         // Go to next image pressing the right key
                         if (e.keyCode === 39) {
-                            plugin.next();
+                            plugin.previous();
                         }
                         // Go to previous image pressing the left key
                         if (e.keyCode === 37) {
+                            plugin.next();
+                        }
+                        // up
+                        if (e.keyCode === 38) {
                             plugin.previous();
+                        }
+                        // down
+                        if (e.keyCode === 40) {
+                            plugin.next();
                         }
 //                        以后可以研究一下  进一步的优化lightbox
 //                        if((e.ctrlKey)&&(e.keyCode!=17)){
