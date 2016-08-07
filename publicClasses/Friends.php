@@ -29,6 +29,8 @@ class Friends{
 		// 保存图片
 		$this->model_pic = new Model_Pic();
 		$this->model_pic->save($pic);
+
+		echo "情感天空存入到数据库完毕!<br>";
 	}
 	/**
 	 * @return 从数据库中获取旅游图片信息

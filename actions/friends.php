@@ -24,7 +24,7 @@ $config = array(
 	'mode' => 2,
 	'count' => 50,
 	'start_page' => '1',
-	'end_page' => '5',
+	'end_page' => '2',
 	'board_name' => $board_name,
 	'has_attachment' => 'yes'
 );

@@ -29,6 +29,7 @@ class Travel{
 
 		// 保存图片
 		$this->model_pic->save($pic);
+		echo "缘来如此数据存入到数据库完毕!<br>";
 	}
 	/**
 	 * @return 从数据库中获取旅游图片信息

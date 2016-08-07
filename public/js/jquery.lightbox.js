@@ -18,7 +18,7 @@
             nav: true,
             blur: true,
             minSize: 0,
-            direction:"toRight",//用来表示图片出来的方向
+            direction:"toLeft",//用来表示图片出来的方向
         };
         var plugin = {
             items: [],
@@ -66,7 +66,7 @@
                 //加载lightbox并且加载loadint图标
                 plugin.lightbox.fadeIn('fast').append('<span class="lightbox-loading"></span>');
 
-                var img = $('<img src="' + $(plugin.current).attr('href') + '" draggable="false" >');
+                var img = $('<img src="' + $(plugin.current).attr('href') + '" draggable="true" >');
                 
                 $(img).error(function(){
                     // console.log(this);
@@ -162,10 +162,10 @@
                 	
                 },200,"easeInExpo",function(){
                 	opts.direction="toRight";
-                    if (plugin.getCurrentIndex() >= plugin.items.length - 1) {
-                        $(plugin.items[0]).click();
+                    if (plugin.getCurrentIndex() <= 0 ) {
+                        $(plugin.items[plugin.items.length - 1]).click();
                     } else {
-                        $(plugin.items[plugin.getCurrentIndex() + 1]).click();
+                        $(plugin.items[plugin.getCurrentIndex() - 1]).click();
                     }
                 });
  
@@ -185,10 +185,10 @@
                 	top:"50%"      	               	
                 },200,"easeInExpo",function(){
                 	opts.direction="toLeft";
-                    if (plugin.getCurrentIndex() <= 0) {
-                        $(plugin.items[plugin.items.length - 1]).click();
+                    if (plugin.getCurrentIndex() >= plugin.items.length - 1) {
+                        $(plugin.items[0]).click();
                     } else {
-                        $(plugin.items[plugin.getCurrentIndex() - 1]).click();
+                        $(plugin.items[plugin.getCurrentIndex() + 1]).click();
                     }
                 });
 
@@ -227,11 +227,11 @@
                             plugin.next();
                         }
                         // up
-                        if (e.keyCode === 38) {
+                        if (e.keyCode === 40) {
                             plugin.previous();
                         }
                         // down
-                        if (e.keyCode === 40) {
+                        if (e.keyCode === 38) {
                             plugin.next();
                         }
 //                        以后可以研究一下  进一步的优化lightbox
