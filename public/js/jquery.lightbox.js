@@ -127,7 +127,7 @@
  					}).show().animate({//0,"easeInOutBack"
 						top:InitTop,//
 						left:InitLeft,//
-					},300,"");//easeInOutBack
+					},200,"");//easeInOutBack
                 }else if(opts.direction=="toLeft"){
                     plugin.image.css({
 						'top': "0%",
@@ -138,7 +138,7 @@
 						left:InitLeft,//
 						//top:'+50px',//是可以的  只不过这么做的话 最终会移动到 50*10000的地方  倒不如直接定义好 应该top是多少
 						//left:'+50px',//
-					},300,"");//show("slow","easeInOutBack");easeInOutBack
+					},200,"");//show("slow","easeInOutBack");easeInOutBack
                 }
     
                 plugin.locked = false;
